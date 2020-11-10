@@ -4,16 +4,19 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Navigation from "../components/navigation"
 import { rhythm } from "../utils/typography"
+import styled from 'styled-components'
 
-const BlogIndex = ({ data, location }) => {
+const BlogIndex = ({ data, location, className }) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
-      <Bio />
+    <Layout className={className} location={location} title={siteTitle}>
+      <Navigation items={["Home", "Blog", "Contact"]} />
+      <SEO title="Lucy Woodhead" />
+      {/* <Bio /> */}
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
@@ -24,7 +27,7 @@ const BlogIndex = ({ data, location }) => {
                   marginBottom: rhythm(1 / 4),
                 }}
               >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                <Link style={{ boxShadow: `none`, color: 'white' }} to={node.fields.slug}>
                   {title}
                 </Link>
               </h3>
@@ -44,7 +47,12 @@ const BlogIndex = ({ data, location }) => {
   )
 }
 
-export default BlogIndex
+const styledBlogIndex = styled(BlogIndex)`
+background: #9fb1bc;
+max-width: none!important;
+`
+
+export default styledBlogIndex;
 
 export const pageQuery = graphql`
   query {

@@ -8,10 +8,11 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
+import styled from 'styled-components'
 
 import { rhythm } from "../utils/typography"
 
-const Bio = () => {
+const Bio = ({className}) => {
   const data = useStaticQuery(graphql`
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
@@ -38,12 +39,13 @@ const Bio = () => {
   const { author, social } = data.site.siteMetadata
   return (
     <div
+      className={className}
       style={{
         display: `flex`,
         marginBottom: rhythm(2.5),
       }}
     >
-      <Image
+      {/* <Image
         fixed={data.avatar.childImageSharp.fixed}
         alt={author.name}
         style={{
@@ -55,16 +57,22 @@ const Bio = () => {
         imgStyle={{
           borderRadius: `50%`,
         }}
-      />
-      <p>
+      /> */}
+      <p className="title">
         Written by <strong>{author.name}</strong> {author.summary}
         {` `}
         <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
+          You should follow her on Twitter
         </a>
       </p>
     </div>
   )
 }
 
-export default Bio
+const styledBio = styled(Bio)`
+.title {
+  color: #ed6a5a!important;
+}
+`
+
+export default styledBio;

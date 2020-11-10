@@ -2,8 +2,9 @@ import React from "react"
 import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
+import styled from 'styled-components';
 
-const Layout = ({ location, title, children }) => {
+const Layout = ({ location, title, children, className }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   let header
 
@@ -31,7 +32,7 @@ const Layout = ({ location, title, children }) => {
     header = (
       <h3
         style={{
-          fontFamily: `Montserrat, sans-serif`,
+          fontFamily: `Helvetica, sans-serif`,
           marginTop: 0,
         }}
       >
@@ -49,6 +50,7 @@ const Layout = ({ location, title, children }) => {
   }
   return (
     <div
+      className={className}
       style={{
         marginLeft: `auto`,
         marginRight: `auto`,
@@ -67,4 +69,7 @@ const Layout = ({ location, title, children }) => {
   )
 }
 
-export default Layout
+const styledLayout = styled(Layout)`
+
+`
+export default styledLayout;
