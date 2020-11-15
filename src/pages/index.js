@@ -1,55 +1,83 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { rhythm } from "../utils/typography"
 
-import Bio from "../components/bio"
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Navigation from "../components/navigation"
-import { rhythm } from "../utils/typography"
 import styled from 'styled-components'
+import Banner from '../components/banner'
+import Community from '../components/community'
 
 const BlogIndex = ({ data, location, className }) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
 
   return (
-    <Layout className={className} location={location} title={siteTitle}>
-      <Navigation items={["Home", "Blog", "Contact"]} />
-      <SEO title="Lucy Woodhead" />
-      {/* <Bio /> */}
-      {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
-        return (
-          <article key={node.fields.slug}>
-            <header>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none`, color: 'white' }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-            </header>
-            <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </section>
-          </article>
-        )
-      })}
-    </Layout>
+    <>
+      <Layout className={className} location={location} title={siteTitle}>
+        <div className="top">
+        <div className="nav"> 
+          {/* <Link className="nav-item" to="/">HOME</Link> */}
+          <Link className="nav-item" to="/blog/">BLOG</Link>
+          </div>
+        <Banner />
+        </div>
+        <SEO title="Lucy Woodhead" />
+        <Community />
+        {posts.map(({ node }) => {
+          const title = node.frontmatter.title || node.fields.slug
+          return (
+            <article key={node.fields.slug}>
+              <header>
+                <h3
+                  style={{
+                    marginBottom: rhythm(1 / 4),
+                  }}
+                >
+                  <Link style={{ boxShadow: `none`, color: 'black' }} to={node.fields.slug}>
+                    {title}
+                  </Link>
+                </h3>
+                <small>{node.frontmatter.date}</small>
+              </header>
+              <section>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: node.frontmatter.description || node.excerpt,
+                  }}
+                />
+              </section>
+            </article>
+          )
+        })
+        }
+      </Layout>   
+   </>
   )
 }
 
 const styledBlogIndex = styled(BlogIndex)`
-background: #9fb1bc;
 max-width: none!important;
+
+  .top {
+    background: #4F493E;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-item {
+      padding-right: 20px;
+      color: white;
+  }  
+
+  .nav-item:hover {
+     color: #FDE9AC;
+  }
 `
 
 export default styledBlogIndex;
