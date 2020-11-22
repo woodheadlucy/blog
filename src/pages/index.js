@@ -8,6 +8,7 @@ import SEO from "../components/seo"
 import styled from 'styled-components'
 import Banner from '../components/banner'
 import Community from '../components/community'
+import About from '../components/about'
 
 const BlogIndex = ({ data, location, className }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -18,14 +19,14 @@ const BlogIndex = ({ data, location, className }) => {
       <Layout className={className} location={location} title={siteTitle}>
         <div className="top">
         <div className="nav"> 
-          {/* <Link className="nav-item" to="/">HOME</Link> */}
           <Link className="nav-item" to="/blog/">BLOG</Link>
           </div>
         <Banner />
         </div>
         <SEO title="Lucy Woodhead" />
+        <About />
         <Community />
-        {posts.map(({ node }) => {
+        {/* {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
             <article key={node.fields.slug}>
@@ -51,7 +52,7 @@ const BlogIndex = ({ data, location, className }) => {
             </article>
           )
         })
-        }
+        } */}
       </Layout>   
    </>
   )
