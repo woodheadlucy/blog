@@ -5,9 +5,9 @@ const About = ({ className }) => {
     return (
         <div className={className}>
             <h1>
-                Hi I'm Lucy
+                Hi, I'm Lucy!
             </h1>
-            <p>I'm a software developer based in the UK and I am interested in so many areas of technology!</p>
+            <p>I'm a software developer based in the UK and I am currently working on healthcare technology at GSK. I love what I do and find the learning process really rewarding. Here are some of the languages and tools I use to create successful outcomes:</p>
             <ul>
                 <li>JavaScript</li>
                 <li>TypeScript</li>
@@ -32,10 +32,17 @@ const About = ({ className }) => {
 }
 
 const styledAbout = styled(About)`
-
-    p {
-        text-transform:uppercase;
+    h1 {
+        font-family: 'merriweather';
+        text-align: center;
     }
+    ul {
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
     display: block;
     margin-left: auto;
     margin-right: auto;

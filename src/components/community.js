@@ -11,7 +11,7 @@ import cisco from '../../content/assets/cisco.jpg'
 const Community = ({className}) => {
     return (
         <div className={className}>
-            <h1>IN THE COMMUNITY</h1>
+            <h1>In the community</h1>
 
             <div class="container">
                 <div class="text"> 
@@ -38,7 +38,9 @@ const Community = ({className}) => {
             <div class="container">
                 <div class="text">
                     <h2>AI Tech North</h2>
-                    <p>Test</p>
+                    <span>For 2019-2020 I have been the Community Manager for AI Tech North.
+                         This voluntary role saw me bringing together communities in the North
+                          of the UK and putting on regular events to help people learn more about AI.</span>
                 </div>
                 <div class="image">
                     <img src={aitn} />
@@ -49,7 +51,9 @@ const Community = ({className}) => {
         <div class="container">
             <div class="text">
                 <h2>Metis</h2>
-                <p>Test</p>
+                <span>After successfully completing a course in testing I was invited back to speak about 
+                    my experience as a developer and how others can kick start their career!
+                </span>
                     <a href="https://metis-online.com/">View Metis' testing courses here</a>
             </div>
             <div class="image">
@@ -60,7 +64,9 @@ const Community = ({className}) => {
             <div class="container">
                 <div class="text">
                     <h2>Code First: Girls</h2>
-                    <p>Test</p>
+                    <span>The Code First: Girls 2019 conference took place in Manchester where I sat on a panel to discuss 
+                        being a software engineer and how I got there.
+                    </span>
                 </div>
                 <div class="image">
                     <img src={cfg} />
@@ -71,7 +77,8 @@ const Community = ({className}) => {
             <div class="container">
                 <div class="text">
                     <h2>Code and stuff</h2>
-                    <p>Test</p>
+                    <span>As part of National Coding Week 2019 I delivered a talk on my growth as 
+                        a developer and how I utilise local meetup groups to learn quickly.</span>
                 </div>
                 <div class="image">
                     <img src={codeandstuff} />
@@ -82,7 +89,9 @@ const Community = ({className}) => {
             <div class="container">
                 <div class="text">
                     <h2>Cisco</h2>
-                    <p>Test</p>
+                    <span>I spent time mentoring and advising college students looking to study STEM subjects at university. I ran some technical sessions 
+                        and talked through the variety of technical roles that exist in the industry.
+                    </span> 
                 </div>
                 <div class="image">
                     <img src={cisco} />
@@ -100,7 +109,9 @@ color: #4F493E;
 
 h1 {
     color: white;
-    font-family: merriweather;
+    font-family: 'merriweather';
+    text-align: center;
+    margin-top: 3.5rem;
 }
 
 .container {
