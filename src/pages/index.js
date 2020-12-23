@@ -19,7 +19,7 @@ const BlogIndex = ({ data, location, className }) => {
       <Layout className={className} location={location} title={siteTitle}>
         <div className="top">
         <div className="nav"> 
-            <Link className="nav-item" to="https://woodheadlucy.medium.com/">BLOG</Link>
+            <Link className="nav-item" to="https://woodheadlucy.medium.com/" target="_blank">BLOG</Link>
           </div>
         <Banner />
         </div>

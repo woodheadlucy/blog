@@ -32,6 +32,8 @@ const About = ({ className }) => {
 }
 
 const styledAbout = styled(About)`
+
+background: #CD6353;
     h1 {
         font-family: 'merriweather';
         text-align: center;
