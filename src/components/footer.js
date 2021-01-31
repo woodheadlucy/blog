@@ -14,6 +14,8 @@ const Footer = ({ className }) => {
 const styledFooter = styled(Footer)`
 background-color: #4F493E;
 color: white;
+bottom: 0;
+position: fixed;
 
 h1 {
     color: white;

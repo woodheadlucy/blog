@@ -45,6 +45,14 @@ background: #CD6353;
         flex-wrap: wrap;
     }
 
+    @media only screen and (max-width: 680px) {
+        ul {
+            display: flex;
+            flex-direction: column;
+            flex-flow: column;
+        }
+}
+
     display: block;
     margin-left: auto;
     margin-right: auto;

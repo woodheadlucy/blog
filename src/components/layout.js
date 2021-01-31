@@ -23,7 +23,8 @@ const Layout = ({ location, title, children, className }) => {
             color: `#4F493E`,
             textTransform: `uppercase`,
             fontSize: `18px`,
-            fontFamily: `merriweather`
+            fontFamily: `merriweather`,
+            textAlign: `center`
           }}
           to={`/`}
         >
@@ -33,22 +34,27 @@ const Layout = ({ location, title, children, className }) => {
     )
   } else {
     header = (
-      <h3
+      <h1
         style={{
-          fontFamily: `Helvetica, sans-serif`,
+          // ...scale(1.5),
           marginTop: 0,
+          textAlign: `center`,
         }}
       >
         <Link
           style={{
             boxShadow: `none`,
-            color: `inherit`,
+            color: `#4F493E`,
+            textTransform: `uppercase`,
+            fontSize: `18px`,
+            fontFamily: `merriweather`,
+            textAlign: `center`
           }}
           to={`/`}
         >
           {title}
         </Link>
-      </h3>
+      </h1>
     )
   }
   return (
@@ -62,7 +68,6 @@ const Layout = ({ location, title, children, className }) => {
     >
       <header>{header}</header>
       <main>{children}</main>
-      <Footer />
     </div>
   )
 }
