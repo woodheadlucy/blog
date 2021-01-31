@@ -16,6 +16,7 @@ const community = ({ data, location, className}) => {
                 <div className="nav">
                     <Link className="nav-item" to="https://woodheadlucy.medium.com/" target="_blank">Articles</Link>
                     <Link className="nav-item" to="/community">Community</Link>
+                    <Link className="nav-item" to="/projects">Projects</Link>
                 </div>
 </div>
         <ul>
@@ -39,6 +40,9 @@ const styledCommunity = styled(community)`
 max-width: none!important;
 
 
+  li {
+    list-style-type: none;
+  }
   .top {
     background: #4F493E;
   }

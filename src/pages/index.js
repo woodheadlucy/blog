@@ -20,6 +20,8 @@ const BlogIndex = ({ data, location, className }) => {
         <div className="nav"> 
             <Link className="nav-item" to="https://woodheadlucy.medium.com/" target="_blank">Articles</Link>
             <Link className="nav-item" to="/community">Community</Link>
+            <Link className="nav-item" to="/projects">Projects</Link>
+
           </div>
         <Banner />
         </div>
